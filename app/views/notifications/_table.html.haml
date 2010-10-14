@@ -1,0 +1,6 @@
+%table
+  %tbody
+    - group.attributes.each do |attribute|
+      %tr
+        %td= attribute.key
+        %td= attribute.value

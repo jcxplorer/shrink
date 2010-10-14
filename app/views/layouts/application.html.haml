@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Shrink
+    = stylesheet_link_tag "reset", "text", "960", "main"
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    %header
+      .container_12
+        %h1.grid_2= link_to "Shrink", :root
+        - if user_signed_in?
+          %navigation
+            .grid_6
+              = navigation_for :projects, :users
+            .grid_4
+              = link_to "Logout", destroy_user_session_path, :class => "right"
+    #content.container_12
+      #flash
+        - if notice
+          %span#notice= notice
+        - if alert
+          %span#alert= alert
+      - if yield(:bar)
+        #bar= yield(:bar)
+      #main.grid_12= yield
+      .clear

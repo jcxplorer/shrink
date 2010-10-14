@@ -1,0 +1,8 @@
+development:
+  database: shrink_development
+
+test:
+  database: shrink_test
+
+production:
+  database: shrink

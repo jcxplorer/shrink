@@ -1,0 +1,16 @@
+- content_for(:bar) do
+  %h2.grid_8= @project.name
+  .grid_4
+    = link_to "Edit project", [:edit, @project], :class => "right"
+
+.grid_12
+  - if @notifications.any?
+    %ul
+      - @notifications.each do |notification|
+        %li
+          .grid_1.count
+            = notification.occurrences
+          = link_to notification.title, [@project, notification]
+  - else
+    %p Luckily you don't have any notifications yet.
+    %p Your API token is #{@project.token}.

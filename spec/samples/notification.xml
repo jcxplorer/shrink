@@ -1,0 +1,35 @@
+<?xml version="1.1"?>
+<notification>
+  <id>3e83a29e908ccef726743cd203da032b</id>
+  <token>924ed0aa73f519166f3e963f409f2f89</token>
+  <title>NameError: uninitialized constant Notification</title>
+
+  <groups>
+    <group>
+      <name>General</name>
+      <attributes>
+        <attribute>
+          <key>Location</key>
+          <value>posts_controller.rb:24</value>
+        </attribute>
+        <attribute>
+          <key>Path</key>
+          <value>/posts/introducing-shrink</value>
+        </attribute>
+      </attributes>
+    </group>
+    <group display="text">
+      <name>Backtrace</name>
+      <text>/srv/getshrink/app/controllers/posts_controller.rb:24:in `show'</text>
+    </group>
+    <group display="table">
+      <name>Variables</name>
+      <attributes>
+        <attribute>
+          <key>@post</key>
+          <value><![CDATA[#<Post id: 1, title: "Introducing Shrink">]]></value>
+        </attribute>
+      </attributes>
+    </group>
+  </groups>
+</notification>

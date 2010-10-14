@@ -1,0 +1,17 @@
+- content_for(:bar) do
+  %h2.grid_6 Projects
+  .grid_6
+    = link_to "Add a project", new_project_path, :class => "right"
+
+.grid_12
+  - if @projects.empty?
+    :textile
+      *You haven't created any projects yet.*
+      Go ahead and press the _Add a project_ button!
+  
+  %ul
+    - @projects.each do |project|
+      %li
+        .grid_1.count{ :class => project.notifications.count == 0 ? "blue" : "orange" }
+          = project.notifications.count
+        = link_to project.name, [project, :notifications]

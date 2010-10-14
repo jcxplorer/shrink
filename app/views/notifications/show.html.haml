@@ -1,0 +1,17 @@
+- content_for(:bar) do
+  .grid_12
+    - @notification.groups.each do |group|
+      = link_to group.name, "#", "data-tab" => group.name.parameterize
+
+.grid_12
+  %h2= @notification.title
+  - @notification.groups.each do |group|
+    .tab{ "data-tab" => group.name.parameterize }
+      - case group.display
+      - when "list"
+        = render "list", :group => group
+      - when "text"
+        = render "text", :group => group
+      - when "table"
+        = render "table", :group => group
+

@@ -1,0 +1,15 @@
+= content_for(:bar) do
+  %h2.grid_8= @user.name
+  .grid_4
+    = button_to "Remove this user", @user, :method => :delete, :confirm => "Are you sure you want to remove this user? There is no going back!", :class => "right"
+
+.grid_12
+  = simple_form_for @user do |f|
+    = f.input :name, :required => false
+    = f.input :email, :required => false
+    = f.input :current_password, :required => true
+    = f.input :password, :required => false
+    = f.input :password_confirmation, :required => false
+    = f.association :projects, :as => :check_boxes
+    = f.button :submit
+
